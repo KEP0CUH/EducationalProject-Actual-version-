@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71bd3829e4421f42bc90b7cf4f3e730, type: 3}
+  m_Name: GreenKorvet
+  m_EditorClassIdentifier: 
+  kind: 1
+  icon: {fileID: 21300000, guid: 6654602c8ce0c27409fd848d513efcd3, type: 3}
+  title: "\u041A\u043E\u0440\u0432\u0435\u0442"
+  cost: 21250
+  size: 670
+  maxGuns: 1
+  maxDevices: 3
+  armor: 2
+  shields: 18
+  structure: 670
+  speed: 92
+  energy: 230
+  cpu: 700
+  radar: 2000
