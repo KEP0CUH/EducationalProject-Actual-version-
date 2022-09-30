@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\PlanetSystem\PlanetView.cs" />
     <Compile Include="Assets\Scripts\PlanetSystem\PlanetState.cs" />
     <Compile Include="Assets\Scripts\PlanetSystem\PlanetSpawner.cs" />
+    <Compile Include="Assets\Scripts\PlanetSystem\InfoPlanetWindow.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

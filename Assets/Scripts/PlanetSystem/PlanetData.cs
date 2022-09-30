@@ -14,6 +14,7 @@ public class PlanetData : ScriptableObject
     [SerializeField] private Vector3 offsetFromSun;
 
     public PlanetKind Kind => kind; 
+    public string Title => title;
     public Sprite Icon => iconPlanet;
     public Vector3 OffsetFromSun => offsetFromSun;
 
