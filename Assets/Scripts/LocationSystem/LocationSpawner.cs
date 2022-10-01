@@ -7,6 +7,7 @@ public class LocationSpawner : MonoBehaviour
     [SerializeField] private List<LocationData> locationsData;
     [SerializeField] private List<Location> spawnedLocations;
     [SerializeField] private CanvasWindow canvas;
+    [SerializeField] private PlanetInside planetInside;
 
     private void Start()
     {
@@ -15,7 +16,7 @@ public class LocationSpawner : MonoBehaviour
 
         foreach (var location in locationsData)
         {
-             spawnedLocations.Add(new Location(canvas,this.transform,location.Kind));
+             spawnedLocations.Add(new Location(canvas,planetInside,this.transform,location.Kind));
         }
     }
 }

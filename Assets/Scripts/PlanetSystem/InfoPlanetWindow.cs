@@ -9,8 +9,13 @@ public class InfoPlanetWindow : MonoBehaviour
     [SerializeField] private Text organization;
     [SerializeField] private Button buttonLand;
 
-    public InfoPlanetWindow Init(PlanetData data)
+    private PlanetData data;
+    private PlanetInside planetInside;
+
+    public InfoPlanetWindow Init(PlanetInside planetInside,PlanetData data)
     {
+        this.planetInside = planetInside;
+        this.data = data;
         this.title.text = $"<color=grey>Название</color><color=green>    { data.Title}</color>";
         this.icon.sprite = data.Icon;
         this.buttonLand.onClick.AddListener(Land);
@@ -20,6 +25,7 @@ public class InfoPlanetWindow : MonoBehaviour
 
     private void Land()
     {
-
+        planetInside.Init(this.data);
+        Object.Destroy(this.gameObject);
     }
 }

@@ -8,10 +8,12 @@ public class PlanetView : MonoBehaviour
     private InfoPlanetWindow infoWindow;
     private static GameObject infoWindowObject;
     private ICanvas canvas;
+    PlanetInside planetInside;
 
-    public PlanetView Init(ICanvas canvas,Transform parent,PlanetData data)
+    public PlanetView Init(ICanvas canvas,PlanetInside planetInside,Transform parent,PlanetData data)
     {
         this.canvas = canvas;
+        this.planetInside = planetInside;
         this.parent = parent;
         this.data = data;
         this.transform.parent = parent;
@@ -23,12 +25,12 @@ public class PlanetView : MonoBehaviour
 
         this.infoWindow = Resources.Load<GameObject>("Prefabs/UI/InfoPlanetWindow")
             .GetComponent<InfoPlanetWindow>()
-            .Init(data);
+            .Init(planetInside,data);
 
         return this;
     }
 
-    private void OnMouseEnter()
+    private void OnMouseDown()
     {
         if(infoWindowObject == null)
             infoWindowObject = Instantiate(infoWindow.gameObject);
@@ -38,7 +40,7 @@ public class PlanetView : MonoBehaviour
             infoWindowObject = Instantiate(infoWindow.gameObject);
         }
 
-        infoWindowObject.GetComponent<InfoPlanetWindow>().Init(data);
+        infoWindowObject.GetComponent<InfoPlanetWindow>().Init(planetInside,data);
 
         canvas.AttachAsChild(infoWindowObject.gameObject);
     }

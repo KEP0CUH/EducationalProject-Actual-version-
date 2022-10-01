@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlanetSpawner : MonoBehaviour
 {
     private List<Planet> spawnedPlanets;
-    public PlanetSpawner Init(ICanvas canvas,Transform parent,LocationData data)
+    public PlanetSpawner Init(ICanvas canvas,PlanetInside planetInside,Transform parent,LocationData data)
     {
         this.transform.parent = parent;
 
@@ -14,7 +14,7 @@ public class PlanetSpawner : MonoBehaviour
 
         foreach(var kind in planetKinds)
         {
-            spawnedPlanets.Add(new Planet(canvas,this.transform,kind));
+            spawnedPlanets.Add(new Planet(canvas,planetInside,this.transform,kind));
         }
 
         return this;

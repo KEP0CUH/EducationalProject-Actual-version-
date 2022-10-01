@@ -8,13 +8,15 @@ public class Inventory
     private InventoryWindow window;
     private Ship ship;
 
-    public Inventory(ICanvas canvas,Ship ship)
+    public InventoryWindow Window => window;
+
+    public Inventory(ConstantUI constUI,ICanvas canvas,Ship ship)
     {
         this.ship = ship;
         this.state = new InventoryState();
         var windowPrefab = Resources
             .Load<GameObject>("Prefabs/InventoryWindow");
-        this.window = GameObject.Instantiate(windowPrefab).GetComponent<InventoryWindow>().Init(canvas,ship);
+        this.window = GameObject.Instantiate(windowPrefab).GetComponent<InventoryWindow>().Init(constUI, canvas,ship);
     }
 
     public void AddItem(ItemKind kind, int count)

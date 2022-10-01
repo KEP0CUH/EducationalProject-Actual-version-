@@ -9,11 +9,15 @@ public class InventoryWindow : MonoBehaviour
     [SerializeField] private Transform itemSlots;
 
     [SerializeField] private ShipInInventoryWindow shipWindow;
+    [SerializeField] private ConstantUI constantUI;
 
-    public InventoryWindow Init(ICanvas canvas,Ship ship)
+    public InventoryWindow Init(ConstantUI constantUI,ICanvas canvas,Ship ship)
     {
+        this.constantUI = constantUI;
         canvas.AttachAsChild(this.gameObject);
         this.shipWindow = GetComponent<ShipInInventoryWindow>().Init(ship);
+
+        constantUI.OnOpenInventory(this);
         Debug.Log("Инвентарь создан");
         return this;
     }

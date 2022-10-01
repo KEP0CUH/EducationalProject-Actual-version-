@@ -20,7 +20,7 @@ public class Player : MonoBehaviour, IMobHandler, IItemHandler
         this.ship = new Ship(ShipKind.GreenIndus);
         this.GetComponent<SpriteRenderer>().sprite = ship.State.Data.Icon;
 
-        this.inventory = new Inventory(canvas, ship);
+        this.inventory = new Inventory(canvas.ConstantUI,canvas, ship);
         this.camera = GetComponent<PlayerCamera>().Init(transform);
         this.movement = GetComponent<PlayerMovement>().Init(ship);
     }

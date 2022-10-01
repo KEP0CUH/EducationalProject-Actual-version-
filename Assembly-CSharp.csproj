@@ -79,7 +79,7 @@
     <Compile Include="Assets\Scripts\GameEvent.cs" />
     <Compile Include="Assets\Scripts\InventorySystem\InventoryWindow.cs" />
     <Compile Include="Assets\Scripts\MobSystem\MobState.cs" />
-    <Compile Include="Assets\Scripts\CanvasWindow.cs" />
+    <Compile Include="Assets\Scripts\UI\CanvasWindow.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IItemHandler.cs" />
     <Compile Include="Assets\Scripts\NET\Connector.cs" />
     <Compile Include="Assets\Scripts\ItemSystem\Item.cs" />
@@ -104,6 +104,8 @@
     <Compile Include="Assets\Scripts\PlanetSystem\PlanetState.cs" />
     <Compile Include="Assets\Scripts\PlanetSystem\PlanetSpawner.cs" />
     <Compile Include="Assets\Scripts\PlanetSystem\InfoPlanetWindow.cs" />
+    <Compile Include="Assets\Scripts\UI\ConstantUI.cs" />
+    <Compile Include="Assets\Scripts\PlanetSystem\PlanetInside.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

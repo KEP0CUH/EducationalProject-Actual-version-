@@ -16,6 +16,7 @@ public class PlanetData : ScriptableObject
     public PlanetKind Kind => kind; 
     public string Title => title;
     public Sprite Icon => iconPlanet;
+    public Sprite IconBackground => iconBackground;
     public Vector3 OffsetFromSun => offsetFromSun;
 
     private void OnValidate()
