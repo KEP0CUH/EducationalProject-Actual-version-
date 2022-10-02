@@ -8,7 +8,7 @@ public class Slot : MonoBehaviour
 
     public Slot Init(ItemKind kind,int count)
     {
-        var itemDataList = Resources.Load<ItemDataList>("ScriptableObjects/Items/_ListItem");
+        var itemDataList = Resources.Load<ItemDataList>("ScriptableObjects/Items/_ItemList");
         var data = itemDataList.DownloadData(kind);
         this.icon.sprite = data.Icon;
         this.count.text = "<color=blue>Количество: " + count + "</color>"; 

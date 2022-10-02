@@ -106,6 +106,11 @@
     <Compile Include="Assets\Scripts\PlanetSystem\InfoPlanetWindow.cs" />
     <Compile Include="Assets\Scripts\UI\ConstantUI.cs" />
     <Compile Include="Assets\Scripts\PlanetSystem\PlanetInside.cs" />
+    <Compile Include="Assets\Scripts\ShopSystem\Shop.cs" />
+    <Compile Include="Assets\Scripts\ShopSystem\ShopData.cs" />
+    <Compile Include="Assets\Scripts\ShopSystem\ShopDataList.cs" />
+    <Compile Include="Assets\Scripts\ShopSystem\ShopContent.cs" />
+    <Compile Include="Assets\Scripts\ShopSystem\PlayerContent.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

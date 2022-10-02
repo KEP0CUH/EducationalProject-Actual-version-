@@ -12,12 +12,14 @@ public class PlanetData : ScriptableObject
     [SerializeField] private Sprite iconPlanet;
     [SerializeField] private Sprite iconBackground;
     [SerializeField] private Vector3 offsetFromSun;
+    [SerializeField] private ShopKind shopKind;
 
     public PlanetKind Kind => kind; 
     public string Title => title;
     public Sprite Icon => iconPlanet;
     public Sprite IconBackground => iconBackground;
     public Vector3 OffsetFromSun => offsetFromSun;
+    public ShopKind ShopKind => shopKind;
 
     private void OnValidate()
     {
@@ -27,11 +29,13 @@ public class PlanetData : ScriptableObject
                 this.title = "Земля";
                 this.iconKind = PlanetIconKind.PlanetType1;
                 this.offsetFromSun = new Vector3(0,3,0);
+                this.shopKind = ShopKind.shopResources1;
                 break;
             case PlanetKind.Mars:
                 this.title = "Марс";
                 this.iconKind = PlanetIconKind.PlanetType16;
                 this.offsetFromSun = new Vector3(0, 6,0);
+                this.shopKind = ShopKind.shopResources2;
                 break;
         }
 
