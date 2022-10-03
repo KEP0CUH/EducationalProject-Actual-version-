@@ -14,12 +14,12 @@ public class TradeWindow : MonoBehaviour
     [SerializeField] private Button confirm;
     [SerializeField] private Button cancel;
 
-    public TradeWindow Init(ItemKind kind, int count, string action)
+    public TradeWindow Init(ItemKind kind,Sprite icon, int count, string action)
     {
-        this.data = Resources.Load<ItemDataList>("ScriptableObjects/Items/_ItemList").DownloadData(kind);
-        this.icon.sprite = data.Icon;
+        this.icon.sprite = icon;
         this.countInputField.text = count.ToString().ToUpper();
         this.action.text = action;
+
 
         confirm.onClick.AddListener(ConfirmTransaction);
         cancel.onClick.AddListener(CancelTransaction);

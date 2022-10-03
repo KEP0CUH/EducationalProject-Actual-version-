@@ -49,7 +49,7 @@ public class ShopContent : MonoBehaviour
     private void CreateTradeWindow(ItemData data,int count)
     {
         tradeWindow.gameObject.SetActive(true);
-        tradeWindow.GetComponent<TradeWindow>().Init(data.Kind, count, "КУПИТЬ?");
+        tradeWindow.GetComponent<TradeWindow>().Init(data.Kind,data.Icon, count, "КУПИТЬ?");
 
         Debug.Log("Замечен клик по предмету для покупки. Тут будет вызов окошка торговли.");
     }

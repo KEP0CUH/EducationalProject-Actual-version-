@@ -44,7 +44,7 @@ public class PlayerContent : MonoBehaviour
     {
         tradeWindow.gameObject.SetActive(true);
 
-        tradeWindow.GetComponent<TradeWindow>().Init(data.Kind,count,"ПРОДАТЬ?");
+        tradeWindow.GetComponent<TradeWindow>().Init(data.Kind,data.Icon,count,"ПРОДАТЬ?");
         Debug.Log("Замечен клик по предмету для продажи. Тут будет вызов окошка торговли.");
     }
 }
