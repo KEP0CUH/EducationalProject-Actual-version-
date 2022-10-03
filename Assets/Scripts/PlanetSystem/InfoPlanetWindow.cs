@@ -16,7 +16,7 @@ public class InfoPlanetWindow : MonoBehaviour
     {
         this.planetInside = planetInside;
         this.data = data;
-        this.title.text = $"<color=grey>Название</color><color=green>    { data.Title}</color>";
+        this.title.text = $"<color=grey>РќР°Р·РІР°РЅРёРµ</color><color=green>    { data.Title}</color>";
         this.icon.sprite = data.Icon;
         this.buttonLand.onClick.AddListener(Land);
 

@@ -27,13 +27,13 @@ public class Player : MonoBehaviour, IMobHandler, IItemHandler
 
     public void HandleMob(Mob mob)
     {
-        Debug.Log($"Обработка моба:");
+        Debug.Log($"РћР±СЂР°Р±РѕС‚РєР° РјРѕР±Р°:");
         mob.SetDamage(Random.Range(35, 55));
     }
 
     public void HandleItem(ItemView sender,ItemData data)
     {
-        Debug.Log("Добавление в инвентарь");
+        Debug.Log("Р”РѕР±Р°РІР»РµРЅРёРµ РІ РёРЅРІРµРЅС‚Р°СЂСЊ");
         inventory.AddItem(data.Kind,1);
         Object.Destroy(sender.gameObject);
     }

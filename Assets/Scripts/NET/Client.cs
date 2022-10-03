@@ -53,7 +53,7 @@ public class Client
             }
             while (client.Available > 0);
 
-            Debug.Log("Сервер получил ответ: " + sb.ToString());
+            Debug.Log("РЎРµСЂРІРµСЂ РїРѕР»СѓС‡РёР» РѕС‚РІРµС‚: " + sb.ToString());
 
         }
     }

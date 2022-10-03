@@ -32,12 +32,12 @@ public class ShipInInventoryWindow : MonoBehaviour
 
         this.icon.sprite = data.Icon;
         this.title.text = $"<color=orange>{data.Title}</color>";
-        this.size.text = $"      Трюм         <color=orange>{data.Size}</color>";
-        this.armor.text = $"      Броня        <color=orange>{data.Armor}</color>";
-        this.shields.text = $"      Щиты         <color=orange>{data.Shields}%</color>";
-        this.structure.text = $"      Структура    <color=orange>{data.Structure}</color>";
-        this.speed.text = $"      Скорость     <color=orange>{data.Speed}</color>";
-        this.energy.text = $"      Энергия      <color=orange>{data.Energy}</color>";
-        this.cpu.text = $"      ЦП           <color=orange>{data.Cpu}</color>";
+        this.size.text = $"      РўСЂСЋРј         <color=orange>{data.Size}</color>";
+        this.armor.text = $"      Р‘СЂРѕРЅСЏ        <color=orange>{data.Armor}</color>";
+        this.shields.text = $"      Р©РёС‚С‹         <color=orange>{data.Shields}%</color>";
+        this.structure.text = $"      РЎС‚СЂСѓРєС‚СѓСЂР°    <color=orange>{data.Structure}</color>";
+        this.speed.text = $"      РЎРєРѕСЂРѕСЃС‚СЊ     <color=orange>{data.Speed}</color>";
+        this.energy.text = $"      Р­РЅРµСЂРіРёСЏ      <color=orange>{data.Energy}</color>";
+        this.cpu.text = $"      Р¦Рџ           <color=orange>{data.Cpu}</color>";
     }
 }

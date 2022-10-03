@@ -24,7 +24,7 @@ public class LocationData : ScriptableObject
         switch (kind)
         {
             case LocationKind.Krinul:
-                this.title = "Кринул";
+                this.title = "РљСЂРёРЅСѓР»";
                 this.sunKind = SunKind.OrangeSun;
                 this.globalPosition = new Vector2(10, 10);
 

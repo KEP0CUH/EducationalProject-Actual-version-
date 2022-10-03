@@ -26,13 +26,13 @@ public class PlanetData : ScriptableObject
         switch(kind)
         {
             case PlanetKind.Earth:
-                this.title = "Земля";
+                this.title = "Р—РµРјР»СЏ";
                 this.iconKind = PlanetIconKind.PlanetType1;
                 this.offsetFromSun = new Vector3(0,3,0);
                 this.shopKind = ShopKind.shopResources1;
                 break;
             case PlanetKind.Mars:
-                this.title = "Марс";
+                this.title = "РњР°СЂСЃ";
                 this.iconKind = PlanetIconKind.PlanetType16;
                 this.offsetFromSun = new Vector3(0, 6,0);
                 this.shopKind = ShopKind.shopResources2;

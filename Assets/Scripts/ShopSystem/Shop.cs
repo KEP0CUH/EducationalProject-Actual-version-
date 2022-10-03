@@ -21,7 +21,6 @@ public class Shop : MonoBehaviour
     private ShopData DownloadData(ShopKind kind)
     {
         var shopList = Resources.Load<ShopDataList>("ScriptableObjects/Shops/_ShopList");
-        Debug.Log(shopList.DownloadData(kind).Kind);
         return shopList.DownloadData(kind);
     }
 }

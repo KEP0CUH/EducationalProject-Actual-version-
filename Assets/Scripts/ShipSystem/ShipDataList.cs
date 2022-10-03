@@ -22,7 +22,7 @@ public class ShipDataList : ScriptableObject
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Ошибка загрузки предмета." + ex.Message);
+            Console.WriteLine("РћС€РёР±РєР° Р·Р°РіСЂСѓР·РєРё РїСЂРµРґРјРµС‚Р°." + ex.Message);
             return null;
         }
     }

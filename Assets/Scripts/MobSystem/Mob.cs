@@ -13,7 +13,7 @@ public class Mob : MonoBehaviour, IItemHandler
 
     public void SetDamage(int damage)
     {
-        Debug.Log($"Моб получает урон: {damage}");
+        Debug.Log($"РњРѕР± РїРѕР»СѓС‡Р°РµС‚ СѓСЂРѕРЅ: {damage}");
     }
 
     public void TakeItem(ItemView item)
@@ -26,7 +26,7 @@ public class Mob : MonoBehaviour, IItemHandler
     {
         if (other.gameObject.GetComponent(typeof(IMobHandler)))
         {
-            Debug.Log("MobHandler сработал");
+            Debug.Log("MobHandler СЃСЂР°Р±РѕС‚Р°Р»");
             other.gameObject.GetComponent<IMobHandler>().HandleMob(this);
         }
     }

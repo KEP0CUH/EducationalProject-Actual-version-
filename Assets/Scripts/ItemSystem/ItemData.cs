@@ -26,16 +26,16 @@ public class ItemData : ScriptableObject
         switch(kind)
         {
             case ItemKind.Ferrum:
-                title = "Железо";
+                title = "Р–РµР»РµР·Рѕ";
                 break;
             case ItemKind.Gold:
-                title = "Золото";
+                title = "Р—РѕР»РѕС‚Рѕ";
                 break;
             case ItemKind.Titan:
-                title = "Титан";
+                title = "РўРёС‚Р°РЅ";
                 break;
             case ItemKind.Mineral:
-                title = "Минерал";
+                title = "РњРёРЅРµСЂР°Р»";
                 break;
         }
         this.name = kind.ToString();

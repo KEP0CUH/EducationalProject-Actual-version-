@@ -33,7 +33,7 @@ public class ItemView : MonoBehaviour
     {
         if (other.gameObject.GetComponent(typeof(IMobHandler)))
         {
-            Debug.Log("MobHandler сработал");
+            Debug.Log("MobHandler СЃСЂР°Р±РѕС‚Р°Р»");
             if(other.gameObject.GetComponent<IItemHandler>() != null)
             {
                 other.gameObject.GetComponent<IItemHandler>().HandleItem(this,data);

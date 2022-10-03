@@ -26,7 +26,7 @@ public class ShopDataList : ScriptableObject
         }
         catch (Exception ex)
         {
-            Debug.Log("Ошибка загрузки предмета." + ex.Message);
+            Debug.Log("РћС€РёР±РєР° Р·Р°РіСЂСѓР·РєРё РїСЂРµРґРјРµС‚Р°." + ex.Message);
             return null;
         }
     }

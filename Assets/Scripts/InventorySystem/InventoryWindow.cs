@@ -18,7 +18,7 @@ public class InventoryWindow : MonoBehaviour
         this.shipWindow = GetComponent<ShipInInventoryWindow>().Init(ship);
 
         constantUI.OnOpenInventory(this);
-        Debug.Log("Инвентарь создан");
+        Debug.Log("РРЅРІРµРЅС‚Р°СЂСЊ СЃРѕР·РґР°РЅ");
         return this;
     }
 

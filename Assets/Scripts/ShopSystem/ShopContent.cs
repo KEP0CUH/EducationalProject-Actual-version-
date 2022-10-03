@@ -5,21 +5,13 @@ using UnityEngine;
 public class ShopContent : MonoBehaviour
 {
     private ShopData data;
-    private bool initialized = false;
     [SerializeField] private List<Slot> shopList;
     [SerializeField] private Slot slotPrefab;
 
     public ShopContent Init(ShopData data)
     {
-        if(initialized)
-        {
-            Display();
 
-            return this;
-        }
         this.data = data;
-        this.shopList = new List<Slot>();
-        this.initialized = true;
 
         Display();
 
@@ -28,6 +20,11 @@ public class ShopContent : MonoBehaviour
 
     private void Display()
     {
+        if(this.shopList == null)
+        {
+            this.shopList = new List<Slot>();
+        }
+
         if(shopList.Count > 0)
         {
             foreach(Slot slot in shopList)

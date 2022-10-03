@@ -25,7 +25,7 @@ public class PlanetDataList : ScriptableObject
         }
         catch (Exception ex)
         {
-            Debug.Log("Ошибка загрузки планеты." + ex.Message);
+            Debug.Log("РћС€РёР±РєР° Р·Р°РіСЂСѓР·РєРё РїР»Р°РЅРµС‚С‹." + ex.Message);
             return null;
         }
     }

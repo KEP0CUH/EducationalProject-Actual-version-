@@ -1,4 +1,4 @@
-﻿
+
 public static class ColorfulDebugLog
 {
     public static string SetColor(this string mes, Color color) => $"<color={color}>{mes}</color>";
