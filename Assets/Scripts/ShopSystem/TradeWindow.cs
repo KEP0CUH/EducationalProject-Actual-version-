@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class TradeWindow : MonoBehaviour
 {
-    private ItemData data;
     [SerializeField] private Image icon;
     [SerializeField] private Text countTextField;
     [SerializeField] private InputField countInputField;
@@ -14,7 +13,7 @@ public class TradeWindow : MonoBehaviour
     [SerializeField] private Button confirm;
     [SerializeField] private Button cancel;
 
-    public TradeWindow Init(ItemKind kind,Sprite icon, int count, string action)
+    public TradeWindow Init(Sprite icon, int count, string action)
     {
         this.icon.sprite = icon;
         this.countInputField.text = count.ToString().ToUpper();
