@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 4205863614382118036}
-  count: {fileID: 8524950173385695850}
+  countText: {fileID: 8524950173385695850}
   slotKind: 0
   button: {fileID: 840225825802974627}
 --- !u!114 &840225825802974627

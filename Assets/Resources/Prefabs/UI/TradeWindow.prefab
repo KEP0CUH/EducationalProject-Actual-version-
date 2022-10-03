@@ -83,10 +83,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 5101217128182370619}
   m_HandleRect: {fileID: 8410801893918598990}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: 1
+  m_MaxValue: 1000
   m_WholeNumbers: 1
-  m_Value: 1
+  m_Value: 376
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 10
+  m_Text: 376
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -729,7 +729,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 376
 --- !u!1 &6528871580338683959
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,7 +825,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 7838022993523482163}
-  count: {fileID: 4971638803206434574}
+  countTextField: {fileID: 2873698599077881409}
+  countInputField: {fileID: 4971638803206434574}
+  sliderCount: {fileID: 689578198673093245}
   action: {fileID: 7476933313649295280}
   confirm: {fileID: 3793474780255823342}
   cancel: {fileID: 2233615804253713762}
@@ -894,7 +896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0c4b28155acf1f5489d4a0cac8c493a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
