@@ -19,6 +19,11 @@ public class PlanetInside : MonoBehaviour
         this.shopButton.onClick.AddListener(OpenShop);
     }
 
+    public void AddPlayerInventory(Inventory inventory)
+    {
+        shop.AddPlayerInventory(inventory);
+    }
+
     private void Rise()
     {
         this.riseButton.onClick.RemoveAllListeners();

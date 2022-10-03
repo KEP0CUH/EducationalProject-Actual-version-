@@ -21,13 +21,19 @@ public class PlanetView : MonoBehaviour
         transform.RotateAround(parent.position, parent.forward, Random.Range(0.0f, 360.0f));
 
         this.GetComponent<SpriteRenderer>().sprite = data.Icon;
-        this.gameObject.AddComponent<SphereCollider>();
+        this.gameObject.AddComponent<SphereCollider>().isTrigger = true;
+        this.gameObject.AddComponent<Rigidbody>().isKinematic = true;
 
         this.infoWindow = Resources.Load<GameObject>("Prefabs/UI/InfoPlanetWindow")
             .GetComponent<InfoPlanetWindow>()
             .Init(planetInside,data);
 
         return this;
+    }
+
+    public void AddPlayerInventory(Inventory inventory)
+    {
+        planetInside.AddPlayerInventory(inventory);
     }
 
     private void OnMouseDown()
@@ -44,6 +50,17 @@ public class PlanetView : MonoBehaviour
 
         canvas.AttachAsChild(infoWindowObject.gameObject);
     }
+
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if(collider.gameObject.GetComponent<IPlanetHandler>() != null)
+        {
+            Debug.Log("Игрок пересекся с планетой");
+            collider.gameObject.GetComponent<IPlanetHandler>().HandlePlanet(this);
+        }
+    }
+
     private void FixedUpdate()
     {
         SaveRotationAboutSun();

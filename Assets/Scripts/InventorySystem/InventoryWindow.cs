@@ -31,8 +31,7 @@ public class InventoryWindow : MonoBehaviour
 
         foreach(var item in items)
         {
-            var newSlot = Instantiate(slot).GetComponent<Slot>().Init(item.Key,item.Value);
-            newSlot.transform.SetParent(itemSlots.transform);
+            var newSlot = Instantiate(slot,itemSlots.transform).GetComponent<Slot>().Init(item.Key,item.Value);
         }
     }
 

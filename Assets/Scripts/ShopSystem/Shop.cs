@@ -7,7 +7,7 @@ public class Shop : MonoBehaviour
     private ShopData data;
 
     [SerializeField] private ShopContent shopContent;
-    //[SerializeField] private playerContent;
+    [SerializeField] private PlayerContent playerContent;
 
     public Shop Init(ShopKind kind)
     {
@@ -16,6 +16,11 @@ public class Shop : MonoBehaviour
 
 
         return this;
+    }
+
+    public void AddPlayerInventory(Inventory inventory)
+    {
+        playerContent.Init(inventory);
     }
 
     private ShopData DownloadData(ShopKind kind)

@@ -10,9 +10,7 @@ public class ShopContent : MonoBehaviour
 
     public ShopContent Init(ShopData data)
     {
-
         this.data = data;
-
         Display();
 
         return this;

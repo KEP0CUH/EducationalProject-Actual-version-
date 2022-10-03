@@ -31,6 +31,11 @@ public class Inventory
         this.window.UpdateItemsList(state.Items);
     }
 
+    public Dictionary<ItemKind,int> GetItems()
+    {
+        return this.state.Items;
+    }
+
     public void ReswitchWindow()
     {
         this.window.Reswitch();

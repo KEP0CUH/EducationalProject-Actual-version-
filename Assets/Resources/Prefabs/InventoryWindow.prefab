@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  m_ShowMaskGraphic: 0
 --- !u!1 &991595441841887317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,10 +1592,10 @@ RectTransform:
   m_Father: {fileID: 3542810768028339669}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 60.99984}
-  m_SizeDelta: {x: 1, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 109, y: 0}
+  m_SizeDelta: {x: 109, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &6913568266309258428
 MonoBehaviour:
@@ -1611,7 +1611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 15
-    m_Right: 0
+    m_Right: 30
     m_Top: 15
     m_Bottom: 0
   m_ChildAlignment: 0
@@ -1619,8 +1619,8 @@ MonoBehaviour:
   m_StartAxis: 0
   m_CellSize: {x: 64, y: 64}
   m_Spacing: {x: 15, y: 15}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  m_Constraint: 1
+  m_ConstraintCount: 6
 --- !u!114 &7990050514860981786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1813,6 +1813,7 @@ MonoBehaviour:
   slot: {fileID: 6147020787330628598, guid: 01ea19af3c252cd48b059a62e220b6f4, type: 3}
   itemSlots: {fileID: 4347658129102774850}
   shipWindow: {fileID: 0}
+  constantUI: {fileID: 0}
 --- !u!114 &7146328726804355262
 MonoBehaviour:
   m_ObjectHideFlags: 0

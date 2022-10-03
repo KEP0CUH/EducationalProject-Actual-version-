@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerCamera))]
 [RequireComponent (typeof(PlayerMovement))]
-public class Player : MonoBehaviour, IMobHandler, IItemHandler
+public class Player : MonoBehaviour, IMobHandler, IItemHandler, IPlanetHandler
 {
     private Ship ship;
     private PlayerCamera camera;
@@ -38,6 +38,12 @@ public class Player : MonoBehaviour, IMobHandler, IItemHandler
         Object.Destroy(sender.gameObject);
     }
 
+    public void HandlePlanet(PlanetView planet)
+    {
+        planet.AddPlayerInventory(this.inventory);
+    }
+
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.I))
@@ -45,6 +51,5 @@ public class Player : MonoBehaviour, IMobHandler, IItemHandler
             inventory.ReswitchWindow();
         }
     }
-
 
 }
