@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scripts\ShopSystem\ShopContent.cs" />
     <Compile Include="Assets\Scripts\ShopSystem\PlayerContent.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IPlanetHandler.cs" />
+    <Compile Include="Assets\Scripts\ShopSystem\TradeWindow.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

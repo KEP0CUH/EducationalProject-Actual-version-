@@ -7,6 +7,7 @@ public class ShopContent : MonoBehaviour
     private ShopData data;
     [SerializeField] private List<Slot> shopList;
     [SerializeField] private Slot slotPrefab;
+    [SerializeField] private TradeWindow tradeWindow;
 
     public ShopContent Init(ShopData data)
     {
@@ -37,9 +38,20 @@ public class ShopContent : MonoBehaviour
 
         foreach (var item in items)
         {
-            var slot = Instantiate(slotPrefab,this.transform).GetComponent<Slot>().Init(item.Key,item.Value);
+            var slot = Instantiate(slotPrefab,this.transform)
+                .GetComponent<Slot>()
+                .Init(item.Key,item.Value,SlotKind.shopBuy);
+            slot.SettingInteractive(CreateTradeWindow);
             shopList.Add(slot);
         }
+    }
+
+    private void CreateTradeWindow()
+    {
+        tradeWindow.gameObject.SetActive(true);
+        tradeWindow.GetComponent<TradeWindow>().Init(ItemKind.Mineral, 1, "КУПИТЬ?");
+
+        Debug.Log("Замечен клик по предмету для покупки. Тут будет вызов окошка торговли.");
     }
 
 

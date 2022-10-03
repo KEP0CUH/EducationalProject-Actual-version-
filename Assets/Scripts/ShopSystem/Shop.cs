@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
@@ -13,7 +11,6 @@ public class Shop : MonoBehaviour
     {
         this.data = DownloadData(kind);
         this.shopContent = shopContent.GetComponent<ShopContent>().Init(data);
-
 
         return this;
     }

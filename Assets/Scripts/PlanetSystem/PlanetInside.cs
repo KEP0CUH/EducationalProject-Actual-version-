@@ -27,6 +27,7 @@ public class PlanetInside : MonoBehaviour
     private void Rise()
     {
         this.riseButton.onClick.RemoveAllListeners();
+        this.shopButton.onClick.RemoveAllListeners();
         this.gameObject.SetActive(false);
     }
 
@@ -34,7 +35,7 @@ public class PlanetInside : MonoBehaviour
     {
         if(shop != null)
         {
-            shop.gameObject.SetActive(true);
+            shop.gameObject.SetActive(!shop.gameObject.activeInHierarchy);
             shop.Init(data.ShopKind);
         }
     }
