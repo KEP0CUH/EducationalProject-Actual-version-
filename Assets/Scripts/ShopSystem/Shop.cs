@@ -2,27 +2,69 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    private ShopData data;
+    private ShopState state;
+    private Inventory inventory;
 
     [SerializeField] private ShopContent shopContent;
     [SerializeField] private PlayerContent playerContent;
+    public ShopState State => state;
 
     public Shop Init(ShopKind kind)
     {
-        this.data = DownloadData(kind);
-        this.shopContent = shopContent.GetComponent<ShopContent>().Init(data);
+        if(this.state == null)
+         this.state = new ShopState(kind);
+        this.shopContent = shopContent.GetComponent<ShopContent>().Init(MakeBuying,this);
 
         return this;
     }
 
-    public void AddPlayerInventory(Inventory inventory)
+    public Shop Init(Shop shop)
     {
-        playerContent.Init(inventory);
+        this.state = shop.state;
+        this.shopContent = shopContent.GetComponent<ShopContent>().Init(MakeBuying, this);
+
+        return this;
     }
 
-    private ShopData DownloadData(ShopKind kind)
+    public void MakeBuying(ItemKind kind, int count)
     {
-        var shopList = Resources.Load<ShopDataList>("ScriptableObjects/Shops/_ShopList");
-        return shopList.DownloadData(kind);
+        if(inventory != null)
+        {
+            RemoveItem(kind, count);
+            inventory.AddItem(kind, count);
+
+            shopContent.Display();
+            playerContent.Display();
+        }
     }
+
+    public void MakeSelling(ItemKind kind,int count)
+    {
+        if(inventory != null)
+        {
+            AddItem(kind, count);
+            inventory.RemoveItem(kind,count);
+
+            shopContent.Display();
+            playerContent.Display();
+        }
+    }
+
+    public void AddItem(ItemKind kind, int count)
+    {
+        this.state.AddItem(kind, count);
+    }
+
+    public void RemoveItem(ItemKind kind,int count)
+    {
+        this.state.RemoveItem(kind, count);
+    }
+
+    public void AddPlayerInventory(Inventory inventory)
+    {
+        this.inventory = inventory;
+        playerContent.Init(MakeSelling,inventory);
+    }
+
+
 }

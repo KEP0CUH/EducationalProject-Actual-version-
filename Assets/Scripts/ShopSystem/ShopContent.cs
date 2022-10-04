@@ -1,23 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ShopContent : MonoBehaviour
 {
-    private ShopData data;
+    private ShopState state;
+    private Action<ItemKind,int> makeBuying;
     [SerializeField] private List<Slot> shopList;
     [SerializeField] private Slot slotPrefab;
     [SerializeField] private TradeWindow tradeWindow;
 
-    public ShopContent Init(ShopData data)
+    public ShopContent Init(Action<ItemKind, int> makeBuying,Shop shop)
     {
-        this.data = data;
+        this.makeBuying = makeBuying;
+        this.state = shop.State;
         Display();
 
         return this;
     }
 
-    private void Display()
+    public void Display()
     {
         if(this.shopList == null)
         {
@@ -28,13 +31,13 @@ public class ShopContent : MonoBehaviour
         {
             foreach(Slot slot in shopList)
             {
-                Object.Destroy(slot.gameObject);
+                UnityEngine.Object.Destroy(slot.gameObject);
             }
         }
         shopList.Clear();
 
 
-        var items = data.Items;
+        var items = state.GetItems();
 
         foreach (var item in items)
         {
@@ -49,7 +52,7 @@ public class ShopContent : MonoBehaviour
     private void CreateTradeWindow(ItemData data,int count)
     {
         tradeWindow.gameObject.SetActive(true);
-        tradeWindow.GetComponent<TradeWindow>().Init(data.Icon, count, "КУПИТЬ?");
+        tradeWindow.GetComponent<TradeWindow>().Init(makeBuying,data.Kind,data.Icon, count, "КУПИТЬ?");
 
         Debug.Log("Замечен клик по предмету для покупки. Тут будет вызов окошка торговли.");
     }

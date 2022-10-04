@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,9 @@ using UnityEngine.UI;
 
 public class TradeWindow : MonoBehaviour
 {
+    Action<ItemKind, int> makeTransaction;
+    private ItemKind kind;
+    private int count;
     [SerializeField] private Image icon;
     [SerializeField] private Text countTextField;
     [SerializeField] private InputField countInputField;
@@ -13,9 +17,12 @@ public class TradeWindow : MonoBehaviour
     [SerializeField] private Button confirm;
     [SerializeField] private Button cancel;
 
-    public TradeWindow Init(Sprite icon, int count, string action)
+    public TradeWindow Init(Action<ItemKind,int> makeTransaction, ItemKind kind,Sprite icon, int count, string action)
     {
+        this.makeTransaction = makeTransaction;
+        this.kind = kind;
         this.icon.sprite = icon;
+        this.count = count;
         this.countInputField.text = count.ToString().ToUpper();
         this.action.text = action;
 
@@ -38,14 +45,23 @@ public class TradeWindow : MonoBehaviour
     private void ConfirmTransaction()
     {
         this.gameObject.SetActive(false);
+
+        try
+        {
+            var countForTransaction = int.Parse(countInputField.text);
+            this.makeTransaction.Invoke(kind, countForTransaction);
+            this.makeTransaction = null;
+        }
+        catch (Exception ex)
+        {
+            Debug.Log($"Неудачный парсинг числа предметов: {ex}");
+        }
     }
 
     private void CancelTransaction()
     {
         this.gameObject.SetActive(false);
     }
-
-
 
     private void UpdateTextField(float a)
     {

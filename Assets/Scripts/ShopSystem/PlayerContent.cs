@@ -1,30 +1,33 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerContent : MonoBehaviour
 {
     private Inventory playerInventory;
+    private Action<ItemKind, int> makeSelling;
     [SerializeField] private List<Slot> playerItems;
     [SerializeField] private Slot slotPrefab;
     [SerializeField] private TradeWindow tradeWindow;
+    
+    public Inventory PlayerInventory => playerInventory;
 
-    public PlayerContent Init(Inventory playerInventory)
+    public PlayerContent Init(Action<ItemKind,int> makeSelling,Inventory playerInventory)
     {
+        this.makeSelling = makeSelling;
         this.playerInventory = playerInventory;
         Display();
-        
 
         return this;
     }
 
-    private void Display()
+    public void Display()
     {
         if(playerItems == null)
             playerItems = new List<Slot>();
 
         foreach(var slot in playerItems)
         {
-            Object.Destroy(slot.gameObject);
+            UnityEngine.Object.Destroy(slot.gameObject);
         }
         playerItems.Clear();
 
@@ -44,7 +47,7 @@ public class PlayerContent : MonoBehaviour
     {
         tradeWindow.gameObject.SetActive(true);
 
-        tradeWindow.GetComponent<TradeWindow>().Init(data.Icon,count,"ПРОДАТЬ?");
+        tradeWindow.GetComponent<TradeWindow>().Init(makeSelling,data.Kind,data.Icon,count,"ПРОДАТЬ?");
         Debug.Log("Замечен клик по предмету для продажи. Тут будет вызов окошка торговли.");
     }
 }
