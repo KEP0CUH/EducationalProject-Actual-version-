@@ -3,30 +3,30 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class PlanetView : MonoBehaviour
 {
-    private PlanetData data;
+    private PlanetState state;
     private Transform parent;
     private InfoPlanetWindow infoWindow;
     private static GameObject infoWindowObject;
     private ICanvas canvas;
     PlanetInside planetInside;
 
-    public PlanetView Init(ICanvas canvas,PlanetInside planetInside,Transform parent,PlanetData data)
+    public PlanetView Init(ICanvas canvas,PlanetInside planetInside,Transform parent, PlanetState state)
     {
         this.canvas = canvas;
         this.planetInside = planetInside;
         this.parent = parent;
-        this.data = data;
+        this.state = state;
         this.transform.parent = parent;
-        this.transform.localPosition += data.OffsetFromSun;
+        this.transform.localPosition += state.Data.OffsetFromSun;
         transform.RotateAround(parent.position, parent.forward, Random.Range(0.0f, 360.0f));
 
-        this.GetComponent<SpriteRenderer>().sprite = data.Icon;
+        this.GetComponent<SpriteRenderer>().sprite = state.Data.Icon;
         this.gameObject.AddComponent<SphereCollider>().isTrigger = true;
         this.gameObject.AddComponent<Rigidbody>().isKinematic = true;
 
         this.infoWindow = Resources.Load<GameObject>("Prefabs/UI/InfoPlanetWindow")
             .GetComponent<InfoPlanetWindow>()
-            .Init(planetInside,data);
+            .Init(planetInside, state);
 
         return this;
     }
@@ -46,7 +46,7 @@ public class PlanetView : MonoBehaviour
             infoWindowObject = Instantiate(infoWindow.gameObject);
         }
 
-        infoWindowObject.GetComponent<InfoPlanetWindow>().Init(planetInside,data);
+        infoWindowObject.GetComponent<InfoPlanetWindow>().Init(planetInside, state);
 
         canvas.AttachAsChild(infoWindowObject.gameObject);
     }

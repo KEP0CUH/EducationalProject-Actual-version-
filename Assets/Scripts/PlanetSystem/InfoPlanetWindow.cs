@@ -9,15 +9,15 @@ public class InfoPlanetWindow : MonoBehaviour
     [SerializeField] private Text organization;
     [SerializeField] private Button buttonLand;
 
-    private PlanetData data;
+    private PlanetState state;
     private PlanetInside planetInside;
 
-    public InfoPlanetWindow Init(PlanetInside planetInside,PlanetData data)
+    public InfoPlanetWindow Init(PlanetInside planetInside,PlanetState state)
     {
         this.planetInside = planetInside;
-        this.data = data;
-        this.title.text = $"<color=grey>Название</color><color=green>    { data.Title}</color>";
-        this.icon.sprite = data.Icon;
+        this.state = state;
+        this.title.text = $"<color=grey>Название</color><color=green>    { state.Data.Title}</color>";
+        this.icon.sprite = state.Data.Icon;
         this.buttonLand.onClick.AddListener(Land);
 
         return this;
@@ -25,7 +25,7 @@ public class InfoPlanetWindow : MonoBehaviour
 
     private void Land()
     {
-        planetInside.Init(this.data);
+        planetInside.Init(this.state);
         Object.Destroy(this.gameObject);
     }
 }

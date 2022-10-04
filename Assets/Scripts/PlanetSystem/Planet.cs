@@ -11,6 +11,6 @@ public class Planet
     {
         state = new PlanetState(kind);
         view = new GameObject(kind.ToString(),typeof(PlanetView)).GetComponent<PlanetView>()
-            .Init(canvas,planetInside,parent,state.Data);
+            .Init(canvas,planetInside,parent,state);
     }
 }

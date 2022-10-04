@@ -3,16 +3,18 @@ using UnityEngine.UI;
 
 public class PlanetInside : MonoBehaviour
 {
-    private PlanetData data;
+    private PlanetState state;
 
     [SerializeField] private Button riseButton;
     [SerializeField] private Button shopButton;
     [SerializeField] private Image background;
     [SerializeField] private Shop shop;
-    public void Init(PlanetData data)
+    //private ShopState shopState;
+    public void Init(PlanetState state)
     {
-        this.data = data;
-        this.background.sprite = data.IconBackground;
+        this.state = state;
+        //this.shopState = new ShopState(data.ShopKind);
+        this.background.sprite = state.Data.IconBackground;
         this.gameObject.SetActive(true);
 
         this.riseButton.onClick.AddListener(Rise);
@@ -36,7 +38,7 @@ public class PlanetInside : MonoBehaviour
         if(shop != null)
         {
             shop.gameObject.SetActive(!shop.gameObject.activeInHierarchy);
-            shop.Init(data.ShopKind);
+            shop.Init(state.ShopState);
         }
     }
 }

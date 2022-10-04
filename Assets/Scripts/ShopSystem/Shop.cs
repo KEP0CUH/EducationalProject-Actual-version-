@@ -9,19 +9,10 @@ public class Shop : MonoBehaviour
     [SerializeField] private PlayerContent playerContent;
     public ShopState State => state;
 
-    public Shop Init(ShopKind kind)
+    public Shop Init(ShopState state)
     {
-        if(this.state == null)
-         this.state = new ShopState(kind);
+        this.state = state;
         this.shopContent = shopContent.GetComponent<ShopContent>().Init(MakeBuying,this);
-
-        return this;
-    }
-
-    public Shop Init(Shop shop)
-    {
-        this.state = shop.state;
-        this.shopContent = shopContent.GetComponent<ShopContent>().Init(MakeBuying, this);
 
         return this;
     }
