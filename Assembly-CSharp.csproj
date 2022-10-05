@@ -63,7 +63,7 @@
     <Compile Include="Assets\Scripts\ItemSystem\ItemDataList.cs" />
     <Compile Include="Assets\Scripts\InventorySystem\InventoryState.cs" />
     <Compile Include="Assets\Scripts\ItemSystem\ItemData.cs" />
-    <Compile Include="Assets\Resources\ItemEditor\ItemEditor.cs" />
+    <Compile Include="Assets\Resources\ItemEditor\ItemEditorOld.cs" />
     <Compile Include="Assets\Scripts\ShipSystem\ShipState.cs" />
     <Compile Include="Assets\Scripts\PlayerSystem\Player.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ISavable.cs" />
@@ -114,6 +114,7 @@
     <Compile Include="Assets\Scripts\Interfaces\IPlanetHandler.cs" />
     <Compile Include="Assets\Scripts\ShopSystem\TradeWindow.cs" />
     <Compile Include="Assets\Scripts\ShopSystem\ShopState.cs" />
+    <Compile Include="Assets\Scripts\EditorWindows\ItemEditor.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
