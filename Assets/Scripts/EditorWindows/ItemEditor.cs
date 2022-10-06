@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -43,7 +44,7 @@ public class ItemEditor : EditorWindow
 
 
         var box1 = new Box();
-        box1.style.flexGrow = 1f;
+        box1.style.flexGrow = 3f;
         box1.style.flexShrink = 0f;
         box1.style.flexBasis = 0f;
         box1.style.flexDirection = FlexDirection.Column;
@@ -97,13 +98,17 @@ public class ItemEditor : EditorWindow
         parent.Add(newItemLabel);
 
 
-        List<string> fields = new List<string>(Enum.GetNames(typeof(ItemKind)));
+        var enumField = new EnumField(ItemKind.Gold);
+        parent.Add(enumField);
 
-        var kin = new DropdownField(fields,0);
-        
-        parent.Add(kin);
-        
+        var countField = new IntegerField(5);
+        parent.Add(countField);
 
+        var field = new Vector3Field();
+        parent.Add(field);
+
+        var colorField = new ColorField();  
+        parent.Add(colorField);
 
         var nameField = new TextField();
         parent.Add(nameField);
