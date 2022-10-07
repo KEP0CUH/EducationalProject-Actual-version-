@@ -28,6 +28,7 @@ namespace Items
     public class ItemEditor : EditorWindow
     {
         private static Texture2D icon;
+       
 
         private List<Items.ItemData> items;
         private ScrollView scrollView;
@@ -39,6 +40,11 @@ namespace Items
             itemEditor.titleContent = new GUIContent("ItemData Editor.");
 
             icon = Resources.Load<Sprite>("IconsItems/Minerals/Gold").texture;
+        }
+
+        private void OnKindChanged()
+        {
+            Debug.Log($"Kind was changed.");
         }
 
         private void OnEnable()
@@ -57,16 +63,10 @@ namespace Items
             box1.style.flexShrink = 0f;
             box1.style.flexBasis = 0f;
             box1.style.flexDirection = FlexDirection.Column;
-
-
-            var label = new Label("Название");
-            label.style.height = 32;
-            box1.Add(label);
-            var labelIcon = new Label("Спрайт");
-            labelIcon.style.height = 64;
-            box1.Add(labelIcon);
-
-
+            box1.style.borderLeftColor = new StyleColor(UnityEngine.Color.gray);
+            box1.style.borderLeftWidth = 6;
+            box1.style.borderRightColor = new StyleColor(UnityEngine.Color.gray);
+            box1.style.borderRightWidth = 6;
 
             var box2 = new Box();
             box2.style.flexGrow = 3f;
@@ -75,13 +75,6 @@ namespace Items
 
             var text = new TextField();
             box2.Add(text);
-
-
-            var image = new VisualElement();
-            image.style.width = 64;
-            image.style.height = 64;
-            image.style.backgroundImage = Resources.Load<Sprite>("IconsItems/Minerals/Gold").texture;
-            box2.Add(image);
 
             var boxItemsScroll = new Box();
             boxItemsScroll.style.flexGrow = 2f;
@@ -99,22 +92,36 @@ namespace Items
             LoadData();
         }
 
+        private void OnSelectionChange()
+        {
+            Debug.Log("$$$$");
+        }
+        /*{
+            
+        }*/
+
         private void SetupFields(Box parent)
         {
-            var newItemLabel = new Label("New Item");
-            newItemLabel.style.alignSelf = Align.Center;
-            parent.Add(newItemLabel);
-
+            var image = new VisualElement();
+            image.style.width = 64;
+            image.style.height = 64;
+            image.style.backgroundImage = Resources.Load<Sprite>("IconsItems/Minerals/Gold").texture;
+            parent.Add(image);  
 
             var enumField = new EnumField(ItemKind.Gold);
+            //enumField.
             parent.Add(enumField);
             Debug.Log(enumField.focusable);
 
+            var kind = enumField.value.ToString();
+            var path =$"IconsItems/Minerals/{kind}";
+            image.style.backgroundImage = Resources.Load<Sprite>(path).texture;
 
             Debug.Log(enumField.value);
 
             var countField = new IntegerField(5);
             parent.Add(countField);
+            //countField.value.
 
             var field = new Vector3Field();
             parent.Add(field);
@@ -124,6 +131,16 @@ namespace Items
 
             var nameField = new TextField();
             parent.Add(nameField);
+
+            var refreshButton = new Button();
+            refreshButton.text = "Refresh data";
+            refreshButton.clicked += () =>
+            {
+                var kind = enumField.value.ToString();
+                var path = $"IconsItems/Minerals/{kind}";
+                image.style.backgroundImage = Resources.Load<Sprite>(path).texture;
+            };
+            parent.Add(refreshButton);
 
             var saveButton = new Button();
             saveButton.text = "Save item";
