@@ -1704,7 +1704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4779229912512110664
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2611,7 +2611,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 8199459199671660439}
-  count: {fileID: 6481484667850170026}
+  countTextField: {fileID: 4246183579469502437}
+  countInputField: {fileID: 6481484667850170026}
+  sliderCount: {fileID: 1485567092193231833}
   action: {fileID: 8849419243371548180}
   confirm: {fileID: 3001989894374315082}
   cancel: {fileID: 284695914383066310}
@@ -3108,7 +3110,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 7054382249043175579}
-  count: {fileID: 5322898533872785830}
+  countTextField: {fileID: 3080777169494249705}
+  countInputField: {fileID: 5322898533872785830}
+  sliderCount: {fileID: 338241194230727893}
   action: {fileID: 7702021910424193304}
   confirm: {fileID: 4144809277578056518}
   cancel: {fileID: 1431888049951212490}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f71bd3829e4421f42bc90b7cf4f3e730, type: 3}
-  m_Name: GreenKorvet
+  m_Name: Korvet
   m_EditorClassIdentifier: 
   kind: 1
   icon: {fileID: 21300000, guid: 6654602c8ce0c27409fd848d513efcd3, type: 3}

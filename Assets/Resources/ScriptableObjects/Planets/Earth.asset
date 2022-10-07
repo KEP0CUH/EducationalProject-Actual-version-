@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Earth
   m_EditorClassIdentifier: 
   kind: 0
-  title: 
+  title: "\u0417\u0435\u043C\u043B\u044F"
   iconKind: 0
-  iconPlanet: {fileID: 0}
-  iconBackground: {fileID: 0}
+  iconPlanet: {fileID: 21300000, guid: 9a449988d750bc94bad2ea0ea5f92fd0, type: 3}
+  iconBackground: {fileID: 21300000, guid: f74f74f9800beb64c814a5c62edbd062, type: 3}
+  offsetFromSun: {x: 0, y: 3, z: 0}
+  shopKind: 0

@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df5b8e048afa1c9448d39f0794a6d52b, type: 3}
   m_Name: ShopResources2
   m_EditorClassIdentifier: 
+  kind: 1

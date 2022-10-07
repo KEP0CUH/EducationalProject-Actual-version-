@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa9a185af195834fa1c175ffbc9cdee, type: 3}
   m_Name: Mars
   m_EditorClassIdentifier: 
-  kind: 0
-  title: 
-  iconKind: 0
-  iconPlanet: {fileID: 0}
-  iconBackground: {fileID: 0}
+  kind: 1
+  title: "\u041C\u0430\u0440\u0441"
+  iconKind: 15
+  iconPlanet: {fileID: 21300000, guid: 3d8a2a1640dd38f45a7cb19154a344bf, type: 3}
+  iconBackground: {fileID: 21300000, guid: 7c7e50172a3ef1c4c928e8f0edcb79c9, type: 3}
+  offsetFromSun: {x: 0, y: 6, z: 0}
+  shopKind: 1
